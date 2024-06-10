@@ -12,6 +12,7 @@ import ProfileOtherView from "../views/ProfileOtherView.vue";
 import RankingView from "../views/RankingView.vue";
 import FaqView from "../views/FaqVIew.vue";
 import DonateView from "../views/DonateView.vue";
+import AccountDeletion from "../views/AccountDeletion.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -78,6 +79,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/ranking",
     name: "Rankings",
     component: RankingView,
+  },
+  {
+    path: "/accountdeletion",
+    name: "AccountDeletion",
+    component: AccountDeletion,
   },
 ];
 
