@@ -276,7 +276,7 @@
     </ul>
     <p>
       Any in-game purchase is the property of the developers and only the
-      developers.
+      developers. Any purchases are non-refundable.
     </p>
     <ul>
       <li>
