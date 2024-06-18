@@ -100,6 +100,10 @@
 </template>
 
 <script>
+import axios from "axios";
+import config from "@/conf.json";
+const apiHost = config.API_HOST;
+
 export default {
   data() {
     return {
@@ -126,16 +130,33 @@ export default {
     };
   },
   methods: {
-    submitDonation() {
+    async submitDonation() {
       if (
         this.selectedMethod &&
         this.selectedVoucher &&
         this.selectedVoucher.amount &&
         this.selectedVoucher.amount !== 0
       ) {
-        console.log(
-          `Paid $${this.selectedVoucher.amount} using ${this.selectedMethod}`
-        );
+        try {
+          const response = await axios.post(
+            apiHost + "/api/donate",
+            {
+              nickname: "Nagibator3000",
+              amount: this.selectedVoucher.amount,
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          console.log("Donation response:", response.data);
+        } catch (error) {
+          console.error(
+            "Error:",
+            error.response ? error.response.data : error.message
+          );
+        }
       } else {
         alert("Please select a payment method and a voucher amount.");
       }

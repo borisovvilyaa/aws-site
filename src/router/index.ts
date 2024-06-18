@@ -13,6 +13,7 @@ import RankingView from "../views/RankingView.vue";
 import FaqView from "../views/FaqVIew.vue";
 import DonateView from "../views/DonateView.vue";
 import AccountDeletion from "../views/AccountDeletion.vue";
+import PrivacyPolicy from "../views/PrivacyPolicy.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -84,6 +85,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/accountdeletion",
     name: "AccountDeletion",
     component: AccountDeletion,
+  },
+  {
+    path: "/privacy",
+    name: "PrivacyPolicy",
+    component: PrivacyPolicy,
   },
 ];
 
